@@ -1,0 +1,44 @@
+#results{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "r r r";  
+}
+
+.recipe{
+    grid-area: "r";
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 5%;
+    background-color: gainsboro;
+    box-shadow: 1px 1px 3px #0a1612;
+    display: grid;
+    grid-template-rows: 1fr 1fr 6fr;
+    grid-template-areas: 
+    "t"
+    "img"
+    "ing";
+    align-items: center;
+    justify-items: center;
+}
+
+.title{
+    grid-area: "t";
+}
+
+.image{
+    grid-area: "img";
+    height: 100px;
+    width: 100px;
+}
+
+.ingredients{
+    grid-area: "ing";
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "li li li"; 
+}
+
+li{
+    grid-area: "li";
+}
+ 

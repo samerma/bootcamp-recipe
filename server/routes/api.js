@@ -11,7 +11,14 @@ router.get('/recipes/:ingredient', function (req, res) {
     let recipes = []
     urllib.request(`https://recipes-goodness.herokuapp.com/recipes/${ingredient}`, function (err, data, resolve) {
         console.log(JSON.parse(data).results.length)
-        recipes = JSON.parse(data).results
+        recipes = JSON.parse(data).results.map(r => {
+            return {
+                title: r.title,
+                ingredients: r.ingredients,
+                thumbnail: r.thumbnail,
+                href: r.href
+            }
+        })
         res.send(recipes)
     })
 })
